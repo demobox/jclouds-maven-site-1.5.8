@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd-cpd>
+<duplication lines="46" tokens="253">
+<file line="134" path="/scratch/jenkins/workspace/jclouds-maven-site-1.5.8/labs/abiquo/src/main/java/org/jclouds/abiquo/domain/network/ExternalNetwork.java"/>
+<file line="134" path="/scratch/jenkins/workspace/jclouds-maven-site-1.5.8/labs/abiquo/src/main/java/org/jclouds/abiquo/domain/network/UnmanagedNetwork.java"/>
+<codefragment>
+<![CDATA[
+        return wrap(context, ExternalIp.class, ip);
+    }
+
+    // Parent access
+
+    public Enterprise getEnterprise()
+    {
+        RESTLink link =
+            checkNotNull(target.searchLink(ParentLinkName.ENTERPRISE),
+                ValidationErrors.MISSING_REQUIRED_LINK + " " + ParentLinkName.ENTERPRISE);
+
+        ExtendedUtils utils = (ExtendedUtils) context.getUtils();
+        HttpResponse response = utils.getAbiquoHttpClient().get(link);
+
+        ParseXMLWithJAXB<EnterpriseDto> parser =
+            new ParseXMLWithJAXB<EnterpriseDto>(utils.getXml(),
+                TypeLiteral.get(EnterpriseDto.class));
+
+        enterprise = wrap(context, Enterprise.class, parser.apply(response));
+        return enterprise;
+    }
+
+    public Datacenter getDatacenter()
+    {
+        RESTLink link =
+            checkNotNull(target.searchLink(ParentLinkName.DATACENTER),
+                ValidationErrors.MISSING_REQUIRED_LINK + " " + ParentLinkName.DATACENTER);
+
+        ExtendedUtils utils = (ExtendedUtils) context.getUtils();
+        HttpResponse response = utils.getAbiquoHttpClient().get(link);
+
+        ParseXMLWithJAXB<DatacenterDto> parser =
+            new ParseXMLWithJAXB<DatacenterDto>(utils.getXml(),
+                TypeLiteral.get(DatacenterDto.class));
+
+        datacenter = wrap(context, Datacenter.class, parser.apply(response));
+        return datacenter;
+    }
+
+    private void addEnterpriseLink()
+    {
+        checkNotNull(enterprise, ValidationErrors.NULL_RESOURCE + Enterprise.class);
+        checkNotNull(enterprise.getId(), ValidationErrors.MISSING_REQUIRED_FIELD + " id in "
+            + Enterprise.class);
+
+        RESTLink link = enterprise.unwrap().getEditLink();
+]]>
+</codefragment>
+</duplication>
+<duplication lines="67" tokens="192">
+<file line="641" path="/scratch/jenkins/workspace/jclouds-maven-site-1.5.8/labs/abiquo/src/main/java/org/jclouds/abiquo/domain/infrastructure/ManagedRack.java"/>
+<file line="343" path="/scratch/jenkins/workspace/jclouds-maven-site-1.5.8/labs/abiquo/src/main/java/org/jclouds/abiquo/domain/infrastructure/Rack.java"/>
+<codefragment>
+<![CDATA[
+        return target.getShortDescription();
+    }
+
+    public void setShortDescription(final String description)
+    {
+        target.setShortDescription(description);
+    }
+
+    public void setHaEnabled(final boolean haEnabled)
+    {
+        target.setHaEnabled(haEnabled);
+    }
+
+    public boolean isHaEnabled()
+    {
+        return target.isHaEnabled();
+    }
+
+    public Integer getNrsq()
+    {
+        return target.getNrsq();
+    }
+
+    public Integer getVlanIdMax()
+    {
+        return target.getVlanIdMax();
+    }
+
+    public Integer getVlanIdMin()
+    {
+        return target.getVlanIdMin();
+    }
+
+    public Integer getVlanPerVdcReserved()
+    {
+        return target.getVlanPerVdcReserved();
+    }
+
+    public String getVlansIdAvoided()
+    {
+        return target.getVlansIdAvoided();
+    }
+
+    public void setNrsq(final Integer nrsq)
+    {
+        target.setNrsq(nrsq);
+    }
+
+    public void setVlanIdMax(final Integer vlanIdMax)
+    {
+        target.setVlanIdMax(vlanIdMax);
+    }
+
+    public void setVlanIdMin(final Integer vlanIdMin)
+    {
+        target.setVlanIdMin(vlanIdMin);
+    }
+
+    public void setVlanPerVdcReserved(final Integer vlanPerVdcReserved)
+    {
+        target.setVlanPerVdcReserved(vlanPerVdcReserved);
+    }
+
+    public void setVlansIdAvoided(final String vlansIdAvoided)
+    {
+        target.setVlansIdAvoided(vlansIdAvoided);
+    }
+]]>
+</codefragment>
+</duplication>
+<duplication lines="64" tokens="184">
+<file line="528" path="/scratch/jenkins/workspace/jclouds-maven-site-1.5.8/labs/abiquo/src/main/java/org/jclouds/abiquo/domain/infrastructure/ManagedRack.java"/>
+<file line="234" path="/scratch/jenkins/workspace/jclouds-maven-site-1.5.8/labs/abiquo/src/main/java/org/jclouds/abiquo/domain/infrastructure/Rack.java"/>
+<codefragment>
+<![CDATA[
+        }
+
+        public Builder id(final Integer id)
+        {
+            this.id = id;
+            return this;
+        }
+
+        public Builder name(final String name)
+        {
+            this.name = name;
+            return this;
+        }
+
+        public Builder shortDescription(final String shortDescription)
+        {
+            this.shortDescription = shortDescription;
+            return this;
+        }
+
+        public Builder haEnabled(final boolean haEnabled)
+        {
+            this.haEnabled = haEnabled;
+            return this;
+        }
+
+        public Builder nrsq(final int nrsq)
+        {
+            this.nrsq = nrsq;
+            return this;
+        }
+
+        public Builder vlanIdMax(final int vlanIdMax)
+        {
+            this.vlanIdMax = vlanIdMax;
+            return this;
+        }
+
+        public Builder vlanIdMin(final int vlanIdMin)
+        {
+            this.vlanIdMin = vlanIdMin;
+            return this;
+        }
+
+        public Builder vlanPerVdcReserved(final int vlanPerVdcExpected)
+        {
+            this.vlanPerVdcReserved = vlanPerVdcExpected;
+            return this;
+        }
+
+        public Builder VlansIdAvoided(final String vlansIdAvoided)
+        {
+            this.vlansIdAvoided = vlansIdAvoided;
+            return this;
+        }
+
+        public Builder datacenter(final Datacenter datacenter)
+        {
+            checkNotNull(datacenter, ValidationErrors.NULL_RESOURCE + Datacenter.class);
+            this.datacenter = datacenter;
+            return this;
+        }
+
+        public ManagedRack build()
+]]>
+</codefragment>
+</duplication>
+<duplication lines="44" tokens="176">
+<file line="179" path="/scratch/jenkins/workspace/jclouds-maven-site-1.5.8/labs/abiquo/src/main/java/org/jclouds/abiquo/domain/network/ExternalNetwork.java"/>
+<file line="179" path="/scratch/jenkins/workspace/jclouds-maven-site-1.5.8/labs/abiquo/src/main/java/org/jclouds/abiquo/domain/network/UnmanagedNetwork.java"/>
+<codefragment>
+<![CDATA[
+        RESTLink link = enterprise.unwrap().getEditLink();
+        checkNotNull(link, ValidationErrors.MISSING_REQUIRED_LINK);
+
+        target.addLink(new RESTLink("enterprise", link.getHref()));
+    }
+
+    // Builder
+
+    public static Builder builder(final RestContext<AbiquoApi, AbiquoAsyncApi> context,
+        final Datacenter datacenter, final Enterprise enterprise)
+    {
+        return new Builder(context, datacenter, enterprise);
+    }
+
+    public static class Builder extends NetworkBuilder<Builder>
+    {
+        private Datacenter datacenter;
+
+        private Enterprise enterprise;
+
+        public Builder(final RestContext<AbiquoApi, AbiquoAsyncApi> context,
+            final Datacenter datacenter, final Enterprise enterprise)
+        {
+            super(context);
+            checkNotNull(datacenter, ValidationErrors.NULL_RESOURCE + Datacenter.class);
+            checkNotNull(datacenter, ValidationErrors.NULL_RESOURCE + Enterprise.class);
+            this.datacenter = datacenter;
+            this.enterprise = enterprise;
+            this.context = context;
+        }
+
+        public Builder datacenter(final Datacenter datacenter)
+        {
+            this.datacenter = datacenter;
+            return this;
+        }
+
+        public Builder enterprise(final Enterprise enterprise)
+        {
+            this.enterprise = enterprise;
+            return this;
+        }
+
+        public ExternalNetwork build()
+]]>
+</codefragment>
+</duplication>
+<duplication lines="56" tokens="114">
+<file line="68" path="/scratch/jenkins/workspace/jclouds-maven-site-1.5.8/labs/abiquo/src/main/java/org/jclouds/abiquo/domain/network/ExternalNetwork.java"/>
+<file line="68" path="/scratch/jenkins/workspace/jclouds-maven-site-1.5.8/labs/abiquo/src/main/java/org/jclouds/abiquo/domain/network/UnmanagedNetwork.java"/>
+<codefragment>
+<![CDATA[
+    protected ExternalNetwork(final RestContext<AbiquoApi, AbiquoAsyncApi> context,
+        final VLANNetworkDto target)
+    {
+        super(context, target);
+    }
+
+    /**
+     * @see API: <a href=
+     *      "http://community.abiquo.com/display/ABI20/Public+Network+Resource#PublicNetworkResource-DeleteanExternalNetwork"
+     *      >
+     *      http://community.abiquo.com/display/ABI20/Public+Network+Resource#PublicNetworkResource
+     *      -DeleteanExternalNetwork</a>
+     */
+    @Override
+    public void delete()
+    {
+        context.getApi().getInfrastructureApi().deleteNetwork(target);
+        target = null;
+    }
+
+    /**
+     * @see API: <a href=
+     *      "http://community.abiquo.com/display/ABI20/Public+Network+Resource#PublicNetworkResource-CreateanewExternalNetwork"
+     *      >
+     *      http://community.abiquo.com/display/ABI20/Public+Network+Resource#PublicNetworkResource
+     *      -CreateanewExternalNetwork</a>
+     */
+    @Override
+    public void save()
+    {
+        this.addEnterpriseLink();
+        target =
+            context.getApi().getInfrastructureApi().createNetwork(datacenter.unwrap(), target);
+    }
+
+    /**
+     * @see API: <a href=
+     *      " http://community.abiquo.com/display/ABI20/Public+Network+Resource#PublicNetworkResource-UpdateanExternalNetwork"
+     *      >
+     *      http://community.abiquo.com/display/ABI20/Public+Network+Resource#PublicNetworkResource
+     *      -UpdateanExternalNetwork</a>
+     */
+    @Override
+    public void update()
+    {
+        target = context.getApi().getInfrastructureApi().updateNetwork(target);
+    }
+
+    /**
+     * @see API: <a href=
+     *      "http://community.abiquo.com/display/ABI20/Public+IPs+Resource#PublicIPsResource-ReturnthelistofIPsforaPublicNetwork"
+     *      > http://community.abiquo.com/display/ABI20/Public+IPs+Resource#PublicIPsResource-
+     *      ReturnthelistofIPsforaPublicNetwork</a>
+     */
+    @Override
+    public List<ExternalIp> listIps(final IpOptions options)
+]]>
+</codefragment>
+</duplication>
+<duplication lines="12" tokens="107">
+<file line="246" path="/scratch/jenkins/workspace/jclouds-maven-site-1.5.8/labs/abiquo/src/main/java/org/jclouds/abiquo/domain/network/ExternalNetwork.java"/>
+<file line="247" path="/scratch/jenkins/workspace/jclouds-maven-site-1.5.8/labs/abiquo/src/main/java/org/jclouds/abiquo/domain/network/UnmanagedNetwork.java"/>
+<codefragment>
+<![CDATA[
+            return ExternalNetwork.builder(in.context, in.datacenter, in.enterprise)
+                .name(in.getName()).tag(in.getTag()).gateway(in.getGateway())
+                .address(in.getAddress()).mask(in.getMask()).primaryDNS(in.getPrimaryDNS())
+                .secondaryDNS(in.getSecondaryDNS()).sufixDNS(in.getSufixDNS())
+                .defaultNetwork(in.getDefaultNetwork());
+        }
+    }
+
+    @Override
+    public String toString()
+    {
+        return "External " + super.toString();
+]]>
+</codefragment>
+</duplication>
+<duplication lines="8" tokens="106">
+<file line="861" path="/scratch/jenkins/workspace/jclouds-maven-site-1.5.8/labs/abiquo/src/main/java/org/jclouds/abiquo/domain/enterprise/Enterprise.java"/>
+<file line="108" path="/scratch/jenkins/workspace/jclouds-maven-site-1.5.8/labs/abiquo/src/main/java/org/jclouds/abiquo/domain/enterprise/Limits.java"/>
+<codefragment>
+<![CDATA[
+            return Enterprise.builder(in.context).name(in.getName())
+                .ramLimits(in.getRamSoftLimitInMb(), in.getRamHardLimitInMb())
+                .cpuCountLimits(in.getCpuCountSoftLimit(), in.getCpuCountHardLimit())
+                .hdLimitsInMb(in.getHdSoftLimitInMb(), in.getHdHardLimitInMb())
+                .storageLimits(in.getStorageSoft(), in.getStorageHard())
+                .vlansLimits(in.getVlansSoft(), in.getVlansHard())
+                .publicIpsLimits(in.getPublicIpsSoft(), in.getPublicIpsHard())
+                .repositoryLimits(in.getRepositorySoft(), in.getRepositoryHard())
+]]>
+</codefragment>
+</duplication>
+<duplication lines="18" tokens="102">
+<file line="154" path="/scratch/jenkins/workspace/jclouds-maven-site-1.5.8/labs/abiquo/src/main/java/org/jclouds/abiquo/domain/network/ExternalNetwork.java"/>
+<file line="130" path="/scratch/jenkins/workspace/jclouds-maven-site-1.5.8/labs/abiquo/src/main/java/org/jclouds/abiquo/domain/network/PublicNetwork.java"/>
+<file line="154" path="/scratch/jenkins/workspace/jclouds-maven-site-1.5.8/labs/abiquo/src/main/java/org/jclouds/abiquo/domain/network/UnmanagedNetwork.java"/>
+<codefragment>
+<![CDATA[
+    }
+
+    public Datacenter getDatacenter()
+    {
+        RESTLink link =
+            checkNotNull(target.searchLink(ParentLinkName.DATACENTER),
+                ValidationErrors.MISSING_REQUIRED_LINK + " " + ParentLinkName.DATACENTER);
+
+        ExtendedUtils utils = (ExtendedUtils) context.getUtils();
+        HttpResponse response = utils.getAbiquoHttpClient().get(link);
+
+        ParseXMLWithJAXB<DatacenterDto> parser =
+            new ParseXMLWithJAXB<DatacenterDto>(utils.getXml(),
+                TypeLiteral.get(DatacenterDto.class));
+
+        datacenter = wrap(context, Datacenter.class, parser.apply(response));
+        return datacenter;
+    }
+]]>
+</codefragment>
+</duplication>
+<duplication lines="8" tokens="101">
+<file line="635" path="/scratch/jenkins/workspace/jclouds-maven-site-1.5.8/labs/abiquo/src/main/java/org/jclouds/abiquo/domain/cloud/VirtualDatacenter.java"/>
+<file line="861" path="/scratch/jenkins/workspace/jclouds-maven-site-1.5.8/labs/abiquo/src/main/java/org/jclouds/abiquo/domain/enterprise/Enterprise.java"/>
+<codefragment>
+<![CDATA[
+            return VirtualDatacenter.builder(in.context, in.datacenter, in.enterprise)
+                .name(in.getName()).ramLimits(in.getRamSoftLimitInMb(), in.getRamHardLimitInMb())
+                .cpuCountLimits(in.getCpuCountSoftLimit(), in.getCpuCountHardLimit())
+                .hdLimitsInMb(in.getHdSoftLimitInMb(), in.getHdHardLimitInMb())
+                .storageLimits(in.getStorageSoft(), in.getStorageHard())
+                .vlansLimits(in.getVlansSoft(), in.getVlansHard())
+                .publicIpsLimits(in.getPublicIpsSoft(), in.getPublicIpsHard())
+                .hypervisorType(in.getHypervisorType());
+]]>
+</codefragment>
+</duplication>
+</pmd-cpd>

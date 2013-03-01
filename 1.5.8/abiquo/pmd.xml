@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd version="4.3" timestamp="2013-03-01T01:53:46.482">
+<file name="/scratch/jenkins/workspace/jclouds-maven-site-1.5.8/labs/abiquo/src/main/java/org/jclouds/abiquo/compute/strategy/AbiquoComputeServiceHelper.java">
+<violation beginline="185" endline="233" begincolumn="13" endcolumn="5" rule="UnusedFormalParameter" ruleset="Unused Code Rules" package="org.jclouds.abiquo.compute.strategy" class="AbiquoComputeServiceHelper" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedFormalParameter" priority="3">
+Avoid unused method parameters such as 'user'.
+</violation>
+<violation beginline="190" endline="190" begincolumn="76" endcolumn="88" rule="AvoidUsingHardCodedIP" ruleset="Basic Rules" package="org.jclouds.abiquo.compute.strategy" class="AbiquoComputeServiceHelper" method="createCompatibleVirtualDatacenter" externalInfoUrl="http://pmd.sourceforge.net/rules/basic.html#AvoidUsingHardCodedIP" priority="3">
+Do not hard code IPv4 or IPv6 addresses, even 127.0.0.1 !
+</violation>
+<violation beginline="191" endline="191" begincolumn="26" endcolumn="38" rule="AvoidUsingHardCodedIP" ruleset="Basic Rules" package="org.jclouds.abiquo.compute.strategy" class="AbiquoComputeServiceHelper" method="createCompatibleVirtualDatacenter" externalInfoUrl="http://pmd.sourceforge.net/rules/basic.html#AvoidUsingHardCodedIP" priority="3">
+Do not hard code IPv4 or IPv6 addresses, even 127.0.0.1 !
+</violation>
+</file>
+<file name="/scratch/jenkins/workspace/jclouds-maven-site-1.5.8/labs/abiquo/src/main/java/org/jclouds/abiquo/features/AdminAsyncApi.java">
+<violation beginline="34" endline="34" begincolumn="1" endcolumn="55" rule="UnusedImports" ruleset="Import Statement Rules" package="org.jclouds.abiquo.features" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'org.jclouds.abiquo.domain.enterprise.Enterprise'
+</violation>
+</file>
+<file name="/scratch/jenkins/workspace/jclouds-maven-site-1.5.8/labs/abiquo/src/main/java/org/jclouds/abiquo/features/CloudAsyncApi.java">
+<violation beginline="41" endline="41" begincolumn="1" endcolumn="57" rule="UnusedImports" ruleset="Import Statement Rules" package="org.jclouds.abiquo.features" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'org.jclouds.abiquo.domain.cloud.VirtualDatacenter'
+</violation>
+<violation beginline="47" endline="47" begincolumn="1" endcolumn="55" rule="UnusedImports" ruleset="Import Statement Rules" package="org.jclouds.abiquo.features" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'org.jclouds.abiquo.domain.enterprise.Enterprise'
+</violation>
+<violation beginline="48" endline="48" begincolumn="1" endcolumn="59" rule="UnusedImports" ruleset="Import Statement Rules" package="org.jclouds.abiquo.features" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'org.jclouds.abiquo.domain.infrastructure.Datacenter'
+</violation>
+<violation beginline="89" endline="89" begincolumn="1" endcolumn="79" rule="UnusedImports" ruleset="Import Statement Rules" package="org.jclouds.abiquo.features" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'com.abiquo.server.core.infrastructure.network.VMNetworkConfigurationDto'
+</violation>
+</file>
+<file name="/scratch/jenkins/workspace/jclouds-maven-site-1.5.8/labs/abiquo/src/main/java/org/jclouds/abiquo/features/ConfigAsyncApi.java">
+<violation beginline="48" endline="48" begincolumn="1" endcolumn="57" rule="UnusedImports" ruleset="Import Statement Rules" package="org.jclouds.abiquo.features" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'com.abiquo.server.core.cloud.VirtualDatacenterDto'
+</violation>
+</file>
+<file name="/scratch/jenkins/workspace/jclouds-maven-site-1.5.8/labs/abiquo/src/main/java/org/jclouds/abiquo/features/VirtualMachineTemplateAsyncApi.java">
+<violation beginline="52" endline="52" begincolumn="1" endcolumn="66" rule="UnusedImports" ruleset="Import Statement Rules" package="org.jclouds.abiquo.features" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'com.abiquo.server.core.appslibrary.DatacenterRepositoryDto'
+</violation>
+</file>
+<file name="/scratch/jenkins/workspace/jclouds-maven-site-1.5.8/labs/abiquo/src/main/java/org/jclouds/abiquo/functions/ReturnAbiquoExceptionOnNotFoundOr4xx.java">
+<violation beginline="51" endline="62" begincolumn="20" endcolumn="5" rule="UnusedFormalParameter" ruleset="Unused Code Rules" package="org.jclouds.abiquo.functions" class="ReturnAbiquoExceptionOnNotFoundOr4xx" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedFormalParameter" priority="3">
+Avoid unused method parameters such as 'exception'.
+</violation>
+</file>
+<file name="/scratch/jenkins/workspace/jclouds-maven-site-1.5.8/labs/abiquo/src/main/java/org/jclouds/abiquo/functions/ReturnFalseIfNotAvailable.java">
+<violation beginline="70" endline="86" begincolumn="20" endcolumn="5" rule="UnusedFormalParameter" ruleset="Unused Code Rules" package="org.jclouds.abiquo.functions" class="ReturnFalseIfNotAvailable" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedFormalParameter" priority="3">
+Avoid unused method parameters such as 'exception'.
+</violation>
+</file>
+<file name="/scratch/jenkins/workspace/jclouds-maven-site-1.5.8/labs/abiquo/src/main/java/org/jclouds/abiquo/functions/ReturnFalseOn5xx.java">
+<violation beginline="61" endline="72" begincolumn="20" endcolumn="5" rule="UnusedFormalParameter" ruleset="Unused Code Rules" package="org.jclouds.abiquo.functions" class="ReturnFalseOn5xx" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedFormalParameter" priority="3">
+Avoid unused method parameters such as 'exception'.
+</violation>
+</file>
+<file name="/scratch/jenkins/workspace/jclouds-maven-site-1.5.8/labs/abiquo/src/main/java/org/jclouds/abiquo/functions/ReturnMovedResource.java">
+<violation beginline="59" endline="76" begincolumn="20" endcolumn="5" rule="UnusedFormalParameter" ruleset="Unused Code Rules" package="org.jclouds.abiquo.functions" class="ReturnMovedResource" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedFormalParameter" priority="3">
+Avoid unused method parameters such as 'exception'.
+</violation>
+</file>
+<file name="/scratch/jenkins/workspace/jclouds-maven-site-1.5.8/labs/abiquo/src/main/java/org/jclouds/abiquo/functions/ReturnNullOn303.java">
+<violation beginline="61" endline="72" begincolumn="20" endcolumn="5" rule="UnusedFormalParameter" ruleset="Unused Code Rules" package="org.jclouds.abiquo.functions" class="ReturnNullOn303" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedFormalParameter" priority="3">
+Avoid unused method parameters such as 'exception'.
+</violation>
+</file>
+<file name="/scratch/jenkins/workspace/jclouds-maven-site-1.5.8/labs/abiquo/src/main/java/org/jclouds/abiquo/http/filters/AbiquoAuthentication.java">
+<violation beginline="26" endline="26" begincolumn="1" endcolumn="44" rule="UnusedImports" ruleset="Import Statement Rules" package="org.jclouds.abiquo.http.filters" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'java.io.UnsupportedEncodingException'
+</violation>
+<violation beginline="33" endline="33" begincolumn="1" endcolumn="40" rule="UnusedImports" ruleset="Import Statement Rules" package="org.jclouds.abiquo.http.filters" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'org.jclouds.crypto.CryptoStreams'
+</violation>
+</file>
+<file name="/scratch/jenkins/workspace/jclouds-maven-site-1.5.8/labs/abiquo/src/main/java/org/jclouds/abiquo/internal/AbiquoContextImpl.java">
+<violation beginline="67" endline="82" begincolumn="12" endcolumn="5" rule="UnusedFormalParameter" ruleset="Unused Code Rules" package="org.jclouds.abiquo.internal" class="AbiquoContextImpl" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedFormalParameter" priority="3">
+Avoid unused constructor parameters such as 'providerSpecificContext'.
+</violation>
+</file>
+</pmd>
